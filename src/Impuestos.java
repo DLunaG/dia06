@@ -8,31 +8,31 @@ public class Impuestos {
 
     public static void main(String[] args) {
         double impuestoTotal = 0;
-        double dinero;
+        double dineroACalcular;
         double dineroInicial;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Hola, pequeño defraudador. Introduce los ingresos del último año y te diré cuánto has de pagar: ");
-        dinero = sc.nextDouble(); //ej = 18.000 , 43.000
-        dineroInicial = dinero;
-        System.out.println("Has ganado "+dinero+"€");
-        if (dinero <= 20_000){
+        System.out.println("Hola, pequeño defraudador en potencia . Introduce los ingresos del último año y te diré cuánto has de pagar: ");
+        dineroACalcular = sc.nextDouble(); //ej = 18.000 , 43.000
+        dineroInicial = dineroACalcular;
+        System.out.println("Has ganado "+dineroACalcular+"€");
+        if (dineroACalcular <= 20_000){
             System.out.println("No tienes porqué pagar impuestos. Enhorabuena, eres pobre.");
-        }else if (dinero > 20_000){
-            dinero -= 20_000;
-            if (dinero <= 20_000){
-                impuestoTotal = dinero*0.1;
+        }else if (dineroACalcular > 20_000){
+            dineroACalcular -= 20_000;
+            if (dineroACalcular <= 20_000){
+                impuestoTotal = dineroACalcular*0.1;
                 System.out.println("Tienes que pagar "+impuestoTotal+"€ de impuestos.");
-            }else if (dinero > 20_000){
+            }else if (dineroACalcular > 20_000){
                 impuestoTotal = 2_000;
-                dinero -= 20_000;
-                if (dinero <= 20_000){
-                    impuestoTotal += dinero*0.2;
+                dineroACalcular -= 20_000;
+                if (dineroACalcular <= 20_000){
+                    impuestoTotal += dineroACalcular*0.2;
                     System.out.println("Tienes que pagar "+impuestoTotal+"€ de impuestos.");
-                }else if (dinero > 20_000){
+                }else if (dineroACalcular > 20_000){
                     impuestoTotal += 4_000;
-                    dinero -= 20_000;
-                    impuestoTotal += dinero*0.3;
+                    dineroACalcular -= 20_000;
+                    impuestoTotal += dineroACalcular*0.3;
                     System.out.println("Tienes que pagar "+impuestoTotal+"€ de impuestos.");
                 }
             }
