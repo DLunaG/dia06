@@ -1,10 +1,11 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ImpuestoAcortado {
 
     public static void main(String[] args) {
         double dinero;
-        double impuestos =0;
+        double impuestos = 0;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Cuánto dinero has cobrado este último año? Vamos a calcular los impuestos que debes pagar.");
@@ -19,7 +20,13 @@ public class ImpuestoAcortado {
             impuestos = 0;
         }
         System.out.println("El dinero que has ganado este año son "+dinero+"€.\n" +
-                "El total de impuestos que debes son: "+impuestos+"€. \n" +
-                "El porcentaje total de los impuestos sobre tu renta ha sido del "+(impuestos/dinero*100));
+                "El total de impuestos que debes son "+impuestos+"€. \n" +
+                "El porcentaje total de los impuestos sobre tu renta ha sido del "+(impuestos/dinero*100)+"%");
+        System.out.println(" ");
+
+        System.out.println("Salario mensual: "+(dinero/12)+"€ brutos");
+        System.out.println("Salario mensual (14 pagas): "+(dinero/14)+"€ brutos");
+        System.out.println("Al mes debes "+(impuestos/12)+"€ y se te queda en "+((dinero/12)-(impuestos/12))+"€ netos");
+        System.out.println("Al mes (con 14 pagas) debes "+(impuestos/14)+"€ y se te queda en "+((dinero/14)-(impuestos/14))+"€ netos");
     }
 }
